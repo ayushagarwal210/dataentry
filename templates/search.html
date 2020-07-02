@@ -17,6 +17,10 @@
     <div class="container my-3">
         <h1>Search Results:</h1>
         <table class="table my-5">
+        {% if tables|length < 1 %}
+        <p>No search result found</p><br>
+        your search -<b>{{search}}</b> does not match to any data.
+        {% else %}
             <thead>
                 <tr>
                     <th scope="col" name=sno>S.No</th>
@@ -37,6 +41,7 @@
             </tbody>
             {% endfor %}
         </table>
+        {% endif %}
     </div>
 
     <!-- Optional JavaScript -->
